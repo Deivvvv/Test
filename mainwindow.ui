@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>178</width>
-    <height>230</height>
+    <width>257</width>
+    <height>263</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,50 +16,138 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <layout class="QGridLayout" name="gridLayout">
-      <item row="2" column="1">
-       <widget class="QLineEdit" name="lineEdit_3"/>
+     <widget class="QLineEdit" name="lineEdit_2">
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="lineEdit">
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QGridLayout" name="gridLayout_2" columnstretch="0,0,0" columnminimumwidth="0,0,0">
+      <property name="sizeConstraint">
+       <enum>QLayout::SetDefaultConstraint</enum>
+      </property>
+      <property name="horizontalSpacing">
+       <number>6</number>
+      </property>
+      <item row="4" column="1">
+       <widget class="QPushButton" name="pushButton_9">
+        <property name="text">
+         <string>8</string>
+        </property>
+       </widget>
       </item>
-      <item row="1" column="1">
-       <widget class="QLineEdit" name="lineEdit"/>
+      <item row="4" column="2">
+       <widget class="QPushButton" name="pushButton_11">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <widget class="QPushButton" name="pushButton_0">
+        <property name="text">
+         <string>0</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="2">
+       <widget class="QPushButton" name="pushButton_de">
+        <property name="text">
+         <string>*</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="0">
+       <widget class="QPushButton" name="pushButton_minus">
+        <property name="text">
+         <string>-</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="1">
+       <widget class="QPushButton" name="pushButton_C">
+        <property name="text">
+         <string>С</string>
+        </property>
+       </widget>
       </item>
       <item row="0" column="1">
-       <widget class="QLineEdit" name="lineEdit_2"/>
+       <widget class="QPushButton" name="pushButton_2">
+        <property name="text">
+         <string>2</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="2">
+       <widget class="QPushButton" name="pushButton_nu">
+        <property name="text">
+         <string>/</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QPushButton" name="pushButton_3">
+        <property name="text">
+         <string>3</string>
+        </property>
+       </widget>
       </item>
       <item row="3" column="1">
-       <layout class="QFormLayout" name="formLayout">
-        <property name="verticalSpacing">
-         <number>6</number>
+       <widget class="QPushButton" name="pushButton_5">
+        <property name="text">
+         <string>5</string>
         </property>
-        <item row="0" column="0">
-         <widget class="QPushButton" name="pushButton_2">
-          <property name="text">
-           <string>-</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="1">
-         <widget class="QPushButton" name="pushButton_3">
-          <property name="text">
-           <string>*</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="0">
-         <widget class="QPushButton" name="pushButton">
-          <property name="text">
-           <string>+</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="1">
-         <widget class="QPushButton" name="pushButton_4">
-          <property name="text">
-           <string>/</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QPushButton" name="pushButton_plus">
+        <property name="text">
+         <string>+</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QPushButton" name="pushButton">
+        <property name="text">
+         <string>+</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="2">
+       <widget class="QPushButton" name="pushButton_10">
+        <property name="text">
+         <string>6</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QPushButton" name="pushButton_8">
+        <property name="text">
+         <string>7</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QPushButton" name="pushButton_4">
+        <property name="text">
+         <string>4</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QPushButton" name="pushButton_1">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </widget>
       </item>
      </layout>
     </item>
@@ -70,7 +158,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>178</width>
+     <width>257</width>
      <height>22</height>
     </rect>
    </property>
@@ -80,50 +168,34 @@
  <resources/>
  <connections>
   <connection>
+   <sender>pushButton_1</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>add1()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>45</x>
+     <y>102</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>89</x>
+     <y>99</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
    <sender>pushButton_2</sender>
    <signal>clicked()</signal>
    <receiver>MainWindow</receiver>
-   <slot>minus()</slot>
+   <slot>add2()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>40</x>
-     <y>126</y>
+     <x>135</x>
+     <y>100</y>
     </hint>
     <hint type="destinationlabel">
-     <x>74</x>
-     <y>181</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton</sender>
-   <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>plus()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>26</x>
-     <y>157</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>14</x>
-     <y>183</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_4</sender>
-   <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>division()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>148</x>
-     <y>162</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>155</x>
-     <y>181</y>
+     <x>168</x>
+     <y>107</y>
     </hint>
    </hints>
   </connection>
@@ -131,15 +203,207 @@
    <sender>pushButton_3</sender>
    <signal>clicked()</signal>
    <receiver>MainWindow</receiver>
-   <slot>multiplication()</slot>
+   <slot>add3()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>117</x>
+     <x>220</x>
+     <y>93</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>249</x>
+     <y>111</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_4</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>add4()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>65</x>
+     <y>124</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>87</x>
+     <y>137</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_5</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>add5()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
      <y>128</y>
     </hint>
     <hint type="destinationlabel">
-     <x>172</x>
-     <y>109</y>
+     <x>168</x>
+     <y>141</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_10</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>add6()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>228</x>
+     <y>131</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>254</x>
+     <y>143</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_8</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>add7()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>67</x>
+     <y>158</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>90</x>
+     <y>172</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_9</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>add8()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>141</x>
+     <y>158</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>167</x>
+     <y>170</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_11</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>add9()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>231</x>
+     <y>161</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>252</x>
+     <y>171</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_plus</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>plus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>62</x>
+     <y>188</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>86</x>
+     <y>199</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_minus</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>minus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>52</x>
+     <y>223</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>87</x>
+     <y>236</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_nu</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>division()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>220</x>
+     <y>218</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>240</x>
+     <y>240</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_de</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>multiplication()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>234</x>
+     <y>193</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>252</x>
+     <y>205</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_0</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>add0()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>148</x>
+     <y>192</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>169</x>
+     <y>203</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_C</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>149</x>
+     <y>215</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>162</x>
+     <y>236</y>
     </hint>
    </hints>
   </connection>
@@ -149,5 +413,20 @@
   <slot>minus()</slot>
   <slot>multiplication()</slot>
   <slot>division()</slot>
+  <slot>result()</slot>
+  <slot>select1()</slot>
+  <slot>add(int)</slot>
+  <slot>clear()</slot>
+  <slot>select2()</slot>
+  <slot>add0()</slot>
+  <slot>add1()</slot>
+  <slot>add2()</slot>
+  <slot>add3()</slot>
+  <slot>add4()</slot>
+  <slot>add5()</slot>
+  <slot>add6()</slot>
+  <slot>add7()</slot>
+  <slot>add8()</slot>
+  <slot>add9()</slot>
  </slots>
 </ui>
