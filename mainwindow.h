@@ -2,10 +2,11 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QString>
+//#include <QString>
 #include <iostream>
 
-#include <QString>
+#include <QPushButton>
+#include <string>
 #include <QtWidgets/QLineEdit>
 
 QT_BEGIN_NAMESPACE
@@ -18,8 +19,6 @@ class MainWindow : public QMainWindow
 
 public:
 
-    bool first;
-    QString a ="",b="";
     QLineEdit* line1 = nullptr;
     QLineEdit* line2 = nullptr;
 
@@ -28,83 +27,69 @@ public:
 
 public slots:
     double returnDouble(bool first){
-        QStirng str ="";
+        //stirng str ="";
         if(first)
-            str = a;
-        else
-            str = b;
-        //(first)? a:b;
-        return str.toDouble();
+            return line1->text().toInt();
+
+        return line2->text().toInt();
     };
 
     void plus(){
-        double da = returnDouble(true),db= returnDouble(false);
+        if(line2->text() =="Error" )
+            return;
+        int da = returnDouble(true),db= returnDouble(false);
         da += db;
-        a = "" +da;
-      //  a +=b;
-        b="";
-        result();
+        results(da);
     };
     void minus(){
-       // a -=b;
-        b="";
-        result();
+        if(line2->text() =="Error" )
+            return;
+        int da = returnDouble(true),db= returnDouble(false);
+        da -= db;
+        results(da);
     };
+
     void division(){
-        if(b == ""){
+        if(line2->text() =="Error" )
+            return;
+        if(line2->text() =="0" ){
             line2->setText("Error");
-        }else{
-         //   a/=b;
-          //  b=0;
-          //  result();
+            return;
         }
+
+        int da = returnDouble(true),db= returnDouble(false);
+        da /= db;
+        results(da);
+
 
     };
     void multiplication(){
-       // a*=b;
-        b="";
-        result();
+        if(line2->text() =="Error" )
+            return;
+        int da = returnDouble(true),db= returnDouble(false);
+        da *= db;
+        results(da);
     };
     void clear(){
-        (first) ? a="":b="";
-        result();
-    };
-    void result(){
-        if(a == "")
-            line1->setText("0");
-        else
-            line1->setText(a);
-        if(b == "")
+        if(line2->text() !="0"){
             line2->setText("0");
-        else
-            line2->setText(b);
+            return;
+        }
+        if(line1->text() !="0")
+            line1->setText("0");
     };
-    void add(int d){
-        //QString str = ((QPushButton*)sender())->text();
-       // int d = str.split(" ")[0].toInt();
-        if(first)
-            a+=""+d;
+    void add(){
+        QPushButton *button = (QPushButton *)sender();
+        if(line2->text() =="Error" || line2->text() == "0")
+            line2->setText(button->text());
         else
-            b+=""+d;
+            line2->setText(line2->text() +button->text());
 
-        result();
     };
-    void select1(){
-        first =true;
+    void results(int a){
+        line1->setText(""+a);
+        line2->setText( "0");
     };
-    void select2(){
-        first =false;
-    };
-    void add0(){add(0);};
-    void add1(){add(1);};
-    void add2(){add(2);};
-    void add3(){add(3);};
-    void add4(){add(4);};
-    void add5(){add(5);};
-    void add6(){add(6);};
-    void add7(){add(7);};
-    void add8(){add(8);};
-    void add9(){add(9);};
 
 private:
     Ui::MainWindow *ui;

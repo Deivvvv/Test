@@ -20,6 +20,7 @@ MainWindow::MainWindow(QWidget *parent)
    // connect(ui->pushButton_3, SIGNAL(cliked()),SLOT(plus()));
    // connect(ui->pushButton_4, SIGNAL(cliked()),SLOT(plus()));
 
+
 }
 
 
