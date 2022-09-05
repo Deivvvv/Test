@@ -19,8 +19,11 @@ class MainWindow : public QMainWindow
 
 public:
 
+    int mood =0;
+
     QLineEdit* line1 = nullptr;
     QLineEdit* line2 = nullptr;
+    QLineEdit* line3 = nullptr;
 
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
@@ -29,54 +32,35 @@ public slots:
     double returnDouble(bool first){
         //stirng str ="";
         if(first)
-            return line1->text().toInt();
+            return line1->text().toDouble();
 
-        return line2->text().toInt();
+        return line2->text().toDouble();
     };
 
     void plus(){
-        if(line2->text() =="Error" )
-            return;
-        int da = returnDouble(true),db= returnDouble(false);
-        da += db;
-        results(da);
+        mood =0;
+        switchMood();
     };
     void minus(){
-        if(line2->text() =="Error" )
-            return;
-        int da = returnDouble(true),db= returnDouble(false);
-        da -= db;
-        results(da);
+        mood =1;
+        switchMood();
     };
 
     void division(){
-        if(line2->text() =="Error" )
-            return;
-        if(line2->text() =="0" ){
-            line2->setText("Error");
-            return;
-        }
-
-        int da = returnDouble(true),db= returnDouble(false);
-        da /= db;
-        results(da);
-
-
+        mood =3;
+        switchMood();
     };
     void multiplication(){
-        if(line2->text() =="Error" )
-            return;
-        int da = returnDouble(true),db= returnDouble(false);
-        da *= db;
-        results(da);
+        mood =2;
+        switchMood();
     };
     void clear(){
         if(line2->text() !="0"){
             line2->setText("0");
             return;
         }
-        if(line1->text() !="0")
-            line1->setText("0");
+
+        line1->setText("0");
     };
     void add(){
         QPushButton *button = (QPushButton *)sender();
@@ -86,9 +70,50 @@ public slots:
             line2->setText(line2->text() +button->text());
 
     };
-    void results(int a){
-        line1->setText(""+a);
-        line2->setText( "0");
+    void results(){
+        if(line2->text() =="Error" )
+            return;
+        double da = returnDouble(true),db= returnDouble(false);
+
+        switch(mood){
+        case(0):
+            da += db;
+            break;
+        case(1):
+            da -= db;
+            break;
+        case(2):
+            da *= db;
+            break;
+        case(3):
+            if(line2->text() =="0" ){
+                line2->setText("Error");
+                return;
+            }
+            da /= db;
+            break;
+        }
+
+
+        line1->setText(QString::fromStdString(std::to_string(da)));
+       // line1->setText("0");
+        line2->setText("0");
+    };
+    void switchMood(){
+        switch(mood){
+        case(0):
+             line3->setText("+");
+            break;
+        case(1):
+             line3->setText("-");
+            break;
+        case(2):
+             line3->setText("*");
+            break;
+        case(3):
+             line3->setText("/");
+            break;
+        }
     };
 
 private:
