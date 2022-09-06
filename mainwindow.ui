@@ -6,9 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>647</width>
-    <height>458</height>
+    <width>257</width>
+    <height>488</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>257</width>
+    <height>0</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
@@ -16,96 +22,52 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QLineEdit" name="lineEdit_2">
-      <property name="text">
-       <string>0</string>
-      </property>
-      <property name="readOnly">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="lineEdit_3">
-      <property name="text">
-       <string>+</string>
-      </property>
-      <property name="readOnly">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="lineEdit">
-      <property name="text">
-       <string>0</string>
-      </property>
-      <property name="readOnly">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <layout class="QGridLayout" name="gridLayout_2" columnstretch="0,0,0" columnminimumwidth="0,0,0">
+     <layout class="QGridLayout" name="gridLayout_2" columnstretch="0,0,0">
       <property name="sizeConstraint">
        <enum>QLayout::SetDefaultConstraint</enum>
       </property>
       <property name="horizontalSpacing">
        <number>6</number>
       </property>
-      <item row="4" column="1">
-       <widget class="QPushButton" name="pushButton_9">
-        <property name="text">
-         <string>8</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="0">
-       <widget class="QPushButton" name="pushButton">
-        <property name="text">
-         <string>+</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="2">
-       <widget class="QPushButton" name="pushButton_11">
-        <property name="text">
-         <string>9</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="0">
-       <widget class="QPushButton" name="pushButton_4">
-        <property name="text">
-         <string>4</string>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="1">
-       <widget class="QPushButton" name="pushButton_0">
-        <property name="text">
-         <string>0</string>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="2">
-       <widget class="QPushButton" name="pushButton_de">
-        <property name="text">
-         <string>*</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="2">
-       <widget class="QPushButton" name="pushButton_3">
+      <item row="4" column="0">
+       <widget class="QPushButton" name="pushButton_5">
         <property name="text">
          <string>3</string>
         </property>
        </widget>
       </item>
+      <item row="7" column="1">
+       <widget class="QPushButton" name="pushButton_7">
+        <property name="text">
+         <string>V+</string>
+        </property>
+       </widget>
+      </item>
       <item row="3" column="1">
-       <widget class="QPushButton" name="pushButton_5">
+       <widget class="QPushButton" name="pushButton_4">
+        <property name="text">
+         <string>7</string>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="0">
+       <widget class="QPushButton" name="pushButton_6">
+        <property name="text">
+         <string>CN-</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="0">
+       <widget class="QPushButton" name="pushButton_10">
         <property name="text">
          <string>5</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QPushButton" name="pushButton_9">
+        <property name="text">
+         <string>8</string>
         </property>
        </widget>
       </item>
@@ -116,59 +78,72 @@
         </property>
        </widget>
       </item>
+      <item row="7" column="0">
+       <widget class="QPushButton" name="pushButton">
+        <property name="text">
+         <string>CN+</string>
+        </property>
+       </widget>
+      </item>
       <item row="5" column="0">
-       <widget class="QPushButton" name="pushButton_plus">
+       <widget class="QPushButton" name="pushButton_8">
         <property name="text">
-         <string>+</string>
+         <string>4</string>
         </property>
        </widget>
       </item>
-      <item row="7" column="1">
-       <widget class="QPushButton" name="pushButton_C">
+      <item row="8" column="1">
+       <widget class="QPushButton" name="pushButton_12">
         <property name="text">
-         <string>С</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="2">
-       <widget class="QPushButton" name="pushButton_10">
-        <property name="text">
-         <string>6</string>
-        </property>
-       </widget>
-      </item>
-      <item row="7" column="2">
-       <widget class="QPushButton" name="pushButton_nu">
-        <property name="text">
-         <string>/</string>
+         <string>V-</string>
         </property>
        </widget>
       </item>
       <item row="0" column="1">
        <widget class="QPushButton" name="pushButton_2">
         <property name="text">
+         <string>6</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="1">
+       <widget class="QPushButton" name="pushButton_11">
+        <property name="text">
+         <string>0</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QPushButton" name="pushButton_3">
+        <property name="text">
          <string>2</string>
         </property>
        </widget>
       </item>
-      <item row="4" column="0">
-       <widget class="QPushButton" name="pushButton_8">
+      <item row="5" column="1">
+       <widget class="QPushButton" name="pushButton_0">
         <property name="text">
-         <string>7</string>
+         <string>9</string>
         </property>
        </widget>
       </item>
-      <item row="7" column="0">
-       <widget class="QPushButton" name="pushButton_minus">
+      <item row="9" column="0">
+       <widget class="QLineEdit" name="lineEdit_3">
         <property name="text">
-         <string>-</string>
+         <string>CN </string>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
-      <item row="8" column="1">
-       <widget class="QPushButton" name="pushButton_6">
+      <item row="9" column="1">
+       <widget class="QLineEdit" name="lineEdit_2">
         <property name="text">
-         <string>=</string>
+         <string>Volume 0%</string>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
@@ -181,7 +156,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>647</width>
+     <width>257</width>
      <height>22</height>
     </rect>
    </property>
@@ -191,226 +166,66 @@
  <resources/>
  <connections>
   <connection>
-   <sender>pushButton_plus</sender>
+   <sender>pushButton_6</sender>
    <signal>clicked()</signal>
    <receiver>MainWindow</receiver>
-   <slot>plus()</slot>
+   <slot>CNMinus()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>72</x>
-     <y>305</y>
+     <x>124</x>
+     <y>365</y>
     </hint>
     <hint type="destinationlabel">
-     <x>86</x>
-     <y>199</y>
+     <x>159</x>
+     <y>294</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>pushButton_minus</sender>
+   <sender>pushButton</sender>
    <signal>clicked()</signal>
    <receiver>MainWindow</receiver>
-   <slot>minus()</slot>
+   <slot>CNPlus()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>62</x>
-     <y>354</y>
+     <x>124</x>
+     <y>310</y>
     </hint>
     <hint type="destinationlabel">
-     <x>87</x>
-     <y>236</y>
+     <x>237</x>
+     <y>294</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>pushButton_nu</sender>
+   <sender>pushButton_7</sender>
    <signal>clicked()</signal>
    <receiver>MainWindow</receiver>
-   <slot>division()</slot>
+   <slot>VolumePlus()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>636</x>
-     <y>354</y>
+     <x>246</x>
+     <y>312</y>
     </hint>
     <hint type="destinationlabel">
-     <x>506</x>
-     <y>418</y>
+     <x>256</x>
+     <y>294</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>pushButton_C</sender>
+   <sender>pushButton_12</sender>
    <signal>clicked()</signal>
    <receiver>MainWindow</receiver>
-   <slot>clear()</slot>
+   <slot>VolumeMinus()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>425</x>
-     <y>354</y>
+     <x>246</x>
+     <y>364</y>
     </hint>
     <hint type="destinationlabel">
-     <x>162</x>
-     <y>236</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_de</sender>
-   <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>multiplication()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>636</x>
-     <y>305</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>605</x>
-     <y>343</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_0</sender>
-   <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>add()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>425</x>
-     <y>305</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>387</x>
-     <y>349</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_11</sender>
-   <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>add()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>497</x>
-     <y>256</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>498</x>
-     <y>287</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_9</sender>
-   <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>add()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>425</x>
-     <y>256</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>413</x>
-     <y>298</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_10</sender>
-   <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>add()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>544</x>
-     <y>195</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>556</x>
-     <y>234</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_3</sender>
-   <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>add()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>489</x>
-     <y>136</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>491</x>
-     <y>166</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_2</sender>
-   <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>add()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>425</x>
-     <y>158</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>383</x>
-     <y>102</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_5</sender>
-   <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>add()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>385</x>
-     <y>196</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>403</x>
-     <y>170</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_8</sender>
-   <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>add()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>206</x>
-     <y>255</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>209</x>
-     <y>290</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushButton_4</sender>
-   <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>add()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>175</x>
-     <y>194</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>188</x>
-     <y>221</y>
+     <x>256</x>
+     <y>294</y>
     </hint>
    </hints>
   </connection>
@@ -418,43 +233,168 @@
    <sender>pushButton_1</sender>
    <signal>clicked()</signal>
    <receiver>MainWindow</receiver>
-   <slot>add()</slot>
+   <slot>selectCN()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>109</x>
-     <y>158</y>
+     <x>124</x>
+     <y>55</y>
     </hint>
     <hint type="destinationlabel">
-     <x>111</x>
-     <y>164</y>
+     <x>141</x>
+     <y>95</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>pushButton_6</sender>
+   <sender>pushButton_3</sender>
    <signal>clicked()</signal>
    <receiver>MainWindow</receiver>
-   <slot>results()</slot>
+   <slot>selectCN()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>338</x>
-     <y>390</y>
+     <x>124</x>
+     <y>104</y>
     </hint>
     <hint type="destinationlabel">
-     <x>489</x>
-     <y>394</y>
+     <x>200</x>
+     <y>171</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_5</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>selectCN()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>124</x>
+     <y>157</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>162</x>
+     <y>218</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_8</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>selectCN()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>124</x>
+     <y>207</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>167</x>
+     <y>283</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_10</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>selectCN()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>124</x>
+     <y>257</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>151</x>
+     <y>294</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>selectCN()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>246</x>
+     <y>55</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>256</x>
+     <y>104</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_4</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>selectCN()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>246</x>
+     <y>105</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>256</x>
+     <y>163</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_9</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>selectCN()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>246</x>
+     <y>156</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>256</x>
+     <y>222</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_0</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>selectCN()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>246</x>
+     <y>206</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>256</x>
+     <y>284</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_11</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>selectCN()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>246</x>
+     <y>258</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>256</x>
+     <y>294</y>
     </hint>
    </hints>
   </connection>
  </connections>
  <slots>
-  <slot>plus()</slot>
-  <slot>minus()</slot>
-  <slot>multiplication()</slot>
-  <slot>division()</slot>
-  <slot>results()</slot>
-  <slot>add(int)</slot>
-  <slot>clear()</slot>
-  <slot>add()</slot>
+  <slot>selectCN()</slot>
+  <slot>CNPlus()</slot>
+  <slot>CNMinus()</slot>
+  <slot>VolumePlus()</slot>
+  <slot>VolumeMinus()</slot>
  </slots>
 </ui>
