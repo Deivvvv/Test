@@ -7,14 +7,21 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    line1 = ui->lineEdit_2;
-    line2 = ui->lineEdit_3;
+   // line1 = ui->lineEdit_2;
+   // line2 = ui->lineEdit_3;
+
+    imageLabel =ui->label;
+
+    //C:\\Users\\Admin\\Documents\\untitled1\\redButton.png
+    map2 = QPixmap("C:\\Users\\Admin\\Documents\\untitled1\\redButton.png");
+    map1 = QPixmap("C:\\Users\\Admin\\Documents\\untitled1\\greenButton.png");
 
 
-   // connect(ui->pushButton, SIGNAL(cliked()),SLOT(add0())));
+    connect(&m_timer, SIGNAL(timeout()), this, SLOT( Close()));
+   // connect(ui->pushButton, SIGNAL(cliked()),SLOT(Plays()));
+    Set();
 
-
-
+    Close();
 }
 
 

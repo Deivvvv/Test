@@ -5,9 +5,13 @@
 //#include <QString>
 #include <iostream>
 
+#include <QtMultimedia/QMediaPlayer>
+#include <QTimer>
 #include <QPushButton>
+//#include <QLabel>
 #include <string>
 #include <QtWidgets/QLineEdit>
+#include <QtWidgets/QLabel>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -18,53 +22,52 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-
+//C:/Users/Admin/Documents/untitled1/greenButton.png
+    //C:/Users/Admin/Documents/untitled1/redButton.png
     int cn =0, v=0;
+    bool use=false;
 
-    QLineEdit* line1 = nullptr;
-    QLineEdit* line2 = nullptr;
+    QTimer m_timer;
+
+
+    QMediaPlayer *player ;
+    QLabel *imageLabel = nullptr;
+    QPixmap map1;
+    QPixmap map2;
 
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
 public slots:
-    void readCN(){
-        line2->setText("CN " +QString::number(cn));
-       // line2->setText("CN "+cn);
+    void Plays(){
+        if(!use){
+            imageLabel->setPixmap(map2);
+            use = true;
+
+            player->play();
+            m_timer.setSingleShot(true); // If you only want it to fire once
+            m_timer.start(250);
+           // QTimer::singleShot(20 ,Close());
+//Close();
+        }
     };
-    void readV(){
-       // std::string str ="Volume "+QString::number(v) +"0%";
-       // line1->setText("Volume ");
-        line1->setText( "Volume "+QString::number(v) +"0%");
+
+    void Close(){
+        imageLabel->setPixmap(map1);
+        use = false;
     };
-    void selectCN(){
-       QPushButton *button = (QPushButton *)sender();
-       cn = button->text().toInt();
-       readCN();
+
+    void Set(){
+
+        player= new QMediaPlayer;
+        player->setMedia(QUrl::fromLocalFile("C:\\Users\\Admin\\Documents\\untitled1\\zwuk.mp3"));
+        player->setVolume(50);
     };
-    void CNPlus(){
-       if(cn >=30)
-           cn=0;
-       else
-           cn++;
-       readCN();
-    };
-    void CNMinus(){
-       if(cn <=0)
-           cn=30;
-       else
-           cn--;
-       readCN();
-    };
-    void VolumePlus(){
-       if(v <=9)
-           v++;
-       readV();
-    };
-    void VolumeMinus(){
-       if(v>0)
-           v--;
-       readV();
+
+    void ReSize(){
+       // imageLabel->setPixmap(QPixmap::fromImage(blurImage(sourceImage, newValue).scaled(
+       //                                    imageLabel->width(),
+       //                                    imageLabel->height(), Qt::KeepAspectRatio)));
     };
 
 
