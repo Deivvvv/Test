@@ -55,6 +55,7 @@ public slots:
     void Close(){
         imageLabel->setPixmap(map1);
         use = false;
+        player->stop();
     };
 
     void Set(){
