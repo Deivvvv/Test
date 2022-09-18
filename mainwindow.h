@@ -12,6 +12,15 @@
 #include <string>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QLabel>
+#include <QSlider>
+#include <QGraphicsBlurEffect>
+
+#include <QImage>
+#include <QPixmap>
+#include <QGraphicsScene>
+#include <QGraphicsPixmapItem>
+#include <QPainter>
+#include <string>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -22,57 +31,59 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-//C:/Users/Admin/Documents/untitled1/greenButton.png
-    //C:/Users/Admin/Documents/untitled1/redButton.png
-    int cn =0, v=0;
-    bool use=false;
-
-    QTimer m_timer;
 
 
-    QMediaPlayer *player ;
+    QSlider *slider;
     QLabel *imageLabel = nullptr;
     QPixmap map1;
-    QPixmap map2;
 
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+
+    QImage applyEffectToImage(QImage src, QGraphicsEffect *effect, int extent = 0)
+    {
+        if(src.isNull()) return QImage();   //No need to do anything else!
+        if(!effect) return src;             //No need to do anything else!
+        QGraphicsScene scene;
+        QGraphicsPixmapItem item;
+        item.setPixmap(QPixmap::fromImage(src));
+        item.setGraphicsEffect(effect);
+        scene.addItem(&item);
+        QImage res(src.size()+QSize(extent*2, extent*2), QImage::Format_ARGB32);
+        res.fill(Qt::transparent);
+        QPainter ptr(&res);
+        scene.render(&ptr, QRectF(), QRectF( -extent, -extent, src.width()+extent*2, src.height()+extent*2 ) );
+        return res;
+    }
+
 public slots:
-    void Plays(){
-        if(!use){
-            imageLabel->setPixmap(map2);
-            use = true;
-
-            player->play();
-            m_timer.setSingleShot(true); // If you only want it to fire once
-            m_timer.start(250);
-           // QTimer::singleShot(20 ,Close());
-//Close();
-        }
-    };
-
-    void Close(){
-        imageLabel->setPixmap(map1);
-        use = false;
-        player->stop();
-    };
 
     void Set(){
+        // map1.setBlurRadius();
+       //  map1.setBlurHints();
+        QString path = "C:\\Users\\Admin\\Documents\\untitled1\\greenButton.png";
+        QGraphicsBlurEffect *blur = new QGraphicsBlurEffect;
+        blur->setBlurRadius(slider->value());
+        QImage source(path);
+        QImage result = applyEffectToImage( source, blur);
+        imageLabel->setPixmap(QPixmap::fromImage(result));
 
-        player= new QMediaPlayer;
-        player->setMedia(QUrl::fromLocalFile("C:\\Users\\Admin\\Documents\\untitled1\\zwuk.mp3"));
-        player->setVolume(50);
+//
+   //     QImage blurImage(QImage source, int blurRadius);
+
+
+     //  imageLabel->setPixmap(QPixmap::fromImage(blurImage(map1, slider.value()).scaled(
+     //                                      imageLabel->width(),
+      //                                      imageLabel->height(), Qt::KeepAspectRatio)));
     };
 
-    void ReSize(){
-       // imageLabel->setPixmap(QPixmap::fromImage(blurImage(sourceImage, newValue).scaled(
-       //                                    imageLabel->width(),
-       //                                    imageLabel->height(), Qt::KeepAspectRatio)));
-    };
 
 
 private:
+
+
+
     Ui::MainWindow *ui;
 };
 #endif // MAINWINDOW_H

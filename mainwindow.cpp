@@ -11,17 +11,20 @@ MainWindow::MainWindow(QWidget *parent)
    // line2 = ui->lineEdit_3;
 
     imageLabel =ui->label;
+    slider = ui->horizontalSlider;
+    slider->setMinimum(0);
+    slider->setMinimum(10);
 
     //C:\\Users\\Admin\\Documents\\untitled1\\redButton.png
-    map2 = QPixmap("C:\\Users\\Admin\\Documents\\untitled1\\redButton.png");
+  //  map2 = QPixmap("C:\\Users\\Admin\\Documents\\untitled1\\redButton.png");
     map1 = QPixmap("C:\\Users\\Admin\\Documents\\untitled1\\greenButton.png");
 
 
-    connect(&m_timer, SIGNAL(timeout()), this, SLOT( Close()));
+   // connect(&m_timer, SIGNAL(timeout()), this, SLOT( Close()));
    // connect(ui->pushButton, SIGNAL(cliked()),SLOT(Plays()));
-    Set();
+  //  Set();
 
-    Close();
+  //  Close();
 }
 
 
