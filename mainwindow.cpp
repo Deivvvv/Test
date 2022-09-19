@@ -1,35 +1,36 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
+#include <QRegExp>
+#include <QRegularExpression>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
-   // line1 = ui->lineEdit_2;
-   // line2 = ui->lineEdit_3;
-
-    imageLabel =ui->label;
-    slider = ui->horizontalSlider;
-    slider->setMinimum(0);
-    slider->setMinimum(10);
-
-    //C:\\Users\\Admin\\Documents\\untitled1\\redButton.png
-  //  map2 = QPixmap("C:\\Users\\Admin\\Documents\\untitled1\\redButton.png");
-    map1 = QPixmap("C:\\Users\\Admin\\Documents\\untitled1\\greenButton.png");
-
-
-   // connect(&m_timer, SIGNAL(timeout()), this, SLOT( Close()));
-   // connect(ui->pushButton, SIGNAL(cliked()),SLOT(Plays()));
-  //  Set();
-
-  //  Close();
+    connect(ui->lineEdit, &QLineEdit::textEdited, [this](QString curentText){
+        QRegularExpression exp("^(\\+)([0-9])$");
+        if(exp.match(curentText).hasMatch())
+            setOkLable();
+        else
+            setNonOkLable();
+    });
 }
-
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::setOkLable()
+{
+    ui->label->setText("Ok");
+    ui->label->setStyleSheet("QLabel {color : green;}");
+}
+
+void MainWindow::setNonOkLable()
+{
+    ui->label->setText("Non Ok");
+    ui->label->setStyleSheet("QLabel {color : red;}");
 }
 
