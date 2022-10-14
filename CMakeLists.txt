@@ -1,28 +1,32 @@
-cmake_minimum_required(VERSION 3.5)
-
-project(search_engine LANGUAGES CXX)
-
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
-add_executable(search_engine main.cpp)
-
-add_library(MyLibrary STATIC
-    converterjson.h converterjson.cpp
-    invertedindex.h invertedindex.cpp
-    searchserver.h searchserver.cpp
-    nlohmann/json.hpp
-    config.json
-    requests.json
-)
 
 
-#target_link_libraries(search_engine PUBLIC nlohmann_json::nlohmann_json)
+cmake_minimum_required(VERSION 3.23)
+project(search_engine)
 
-#target_link_libraries(MyLibrary PUBLIC search_engine)
+set(JSON_BuildTests OFF CACHE INTERNAL "")
 
-#add_executable(main2 main2.c)
-#target_link_libraries(main2 obj2)
 
-target_link_libraries(search_engine  PUBLIC MyLibrary)
+set(MY_SRC_DIR {gtest_SOURCE_DIR}/include {CMAKE_SOURCE_DIR}/include)
+
+
+set(CMAKE_CXX_STANDARD 14)
+
+set(gtest_disable_pthreads on)
+
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+
+FetchContent_MakeAvailable(googletest)
+
+enable_testing()
+
+#add_executable(search_engine main.cpp include/ConverterJSON.h src/ConverterJSON.cpp include/InvertedIndex.h src/InvertedIndex.cpp include/SearchServer.h src/SearchServer.cpp include/Exceptions.h tests/SearchEngine_test.cpp)
+
+add_executable(search_engine main.cpp converterjson.h invertedindex.h searchserver.h nlohmann/json.hpp config.json requests.json)
+target_link_libraries(search_engine PRIVATE nlohmann_json::nlohmann_json)
+
+target_link_libraries(search_engine PRIVATE gtest_main)
+
+include(GoogleTest)
+
+gtest_discover_tests(search_engine)
 
