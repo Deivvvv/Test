@@ -1,63 +1,38 @@
-cmake_minimum_required(VERSION 3.5)
 
-project(untitled4 VERSION 0.1 LANGUAGES CXX)
 
-set(CMAKE_INCLUDE_CURRENT_DIR ON)
+cmake_minimum_required(VERSION 3.23)
+project(search_engine)
 
-set(CMAKE_AUTOUIC ON)
-set(CMAKE_AUTOMOC ON)
-set(CMAKE_AUTORCC ON)
+set(JSON_BuildTests OFF CACHE INTERNAL "")
 
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
+set(MY_SRC_DIR {gtest_SOURCE_DIR}/include {CMAKE_SOURCE_DIR}/include)
 
-set(PROJECT_SOURCES
-        main.cpp
-        mainwindow.cpp
-        mainwindow.h
-        mainwindow.ui
+
+set(CMAKE_CXX_STANDARD 14)
+
+set(gtest_disable_pthreads on)
+
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+
+include(FetchContent)
+FetchContent_Declare(
+        googletest
+        URL
+        https://github.com/google/googletest/archive/609281088cfefc76f9d0ce82e1ff6c30cc3591e5.zip
 )
+FetchContent_MakeAvailable(googletest)
 
-if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
-    qt_add_executable(untitled4
-        MANUAL_FINALIZATION
-        ${PROJECT_SOURCES}
-    )
-# Define target properties for Android with Qt 6 as:
-#    set_property(TARGET untitled4 APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
-#                 ${CMAKE_CURRENT_SOURCE_DIR}/android)
-# For more information, see https://doc.qt.io/qt-6/qt-add-executable.html#target-creation
-else()
-    if(ANDROID)
-        add_library(untitled4 SHARED
-            ${PROJECT_SOURCES}
-        )
-# Define properties for Android with Qt 5 after find_package() calls as:
-#    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
-    else()
-        add_executable(untitled4
-            ${PROJECT_SOURCES}
-        )
-    endif()
-endif()
+enable_testing()
 
-target_link_libraries(untitled4 PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+#add_executable(search_engine main.cpp include/ConverterJSON.h src/ConverterJSON.cpp include/InvertedIndex.h src/InvertedIndex.cpp include/SearchServer.h src/SearchServer.cpp include/Exceptions.h tests/SearchEngine_test.cpp)
 
-set_target_properties(untitled4 PROPERTIES
-    MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
-    MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
-    MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
-    MACOSX_BUNDLE TRUE
-    WIN32_EXECUTABLE TRUE
-)
+add_executable(search_engine main.cpp converterjson.h invertedindex.h searchserver.h nlohmann/json.hpp config.json requests.json)
+#target_link_libraries(search_engine PRIVATE nlohmann_json::nlohmann_json)
 
-install(TARGETS untitled4
-    BUNDLE DESTINATION .
-    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
+target_link_libraries(search_engine PRIVATE gtest_main)
 
-if(QT_VERSION_MAJOR EQUAL 6)
-    qt_finalize_executable(untitled4)
-endif()
+include(GoogleTest)
+
+gtest_discover_tests(search_engine)
+
