@@ -102,8 +102,8 @@ void putAnswers(std::vector<std::vector<std::pair<int, float>>> answers){
       return str+"00"+end;
   };
     std::ofstream file;
-    file.open(path+"\\answers.json", std::ofstream::out | std::ofstream::trunc);
-    file.close();
+    //file.open(path+"\\answers.json", std::ofstream::out | std::ofstream::trunc);
+    //file.close();
     file.open(path+"\\answers.json", std::ofstream::out | std::ofstream::trunc);
 
     std::string str;

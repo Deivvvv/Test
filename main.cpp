@@ -6,14 +6,13 @@
 
 #include <vector>
 #include <string>
-//using namespace std;
 
-/*
-#include "gtest/gtest.h"
-TEST(sample_test_case, sample_test)
-{
-    EXPECT_EQ(1, 1);
-};*/
+//#include "gtest/gtest.h"
+//TEST(sample_test_case, sample_test)
+//{
+//EXPECT_EQ(1, 1);
+//}
+
 
 std::string FindPath(std::string word){
     int a=0;
@@ -47,7 +46,7 @@ int main(int argc, char *argv[])
         std::vector<std::pair<int, float>>resultCase =std::vector<std::pair<int, float>>(result[i].size());
         for(int i1=0;i1< result[i].size();i1++){
         std::pair<int, float> resultCaseData =  std::pair<int, float>();
-        std::cout <<result[i][i1].doc_id <<std::endl;
+      //  std::cout <<result[i][i1].doc_id <<std::endl;
         resultCaseData.first = result[i][i1].doc_id;
         resultCaseData.second = result[i][i1].rank;
         resultCase[i1] = resultCaseData;
